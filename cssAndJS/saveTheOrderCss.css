@@ -1,0 +1,56 @@
+#goBackButton{
+    width:25%;
+    padding: 5px 0 5px 0;/*上左下右调整*/
+    font-size: 14px;
+    display: inline;
+}
+#beforeButton{
+    width:25%;
+    padding: 5px 0 5px 0;/*上左下右调整*/
+    font-size: 14px;
+    display: inline;
+    float: right;
+}
+
+#yesOrNoInput{
+    font-size: 15px;
+    border-style: none;
+    background-color: transparent;
+    outline: none
+}
+.pp{
+    font-size: 14px;
+}
+#backSelectOrder{
+    padding: 5px 5px 5px 5px;
+    background-color: skyblue;
+    font-size: 13px;
+    text-shadow: none;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    width: 25%;float: right;
+}
+#selectedTable{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+.bottomButton{
+    display: inline;
+    padding: 5px 10px 5px 10px;
+
+}
+.userNameInput{
+    width: 120%;
+    text-shadow: none;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+.otherInput{
+    width: 100%;
+    text-shadow: none;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}

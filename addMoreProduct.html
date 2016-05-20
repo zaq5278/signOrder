@@ -1,0 +1,50 @@
+<ion-view>
+    <ion-header-bar align-title="left" class="bar-calm">
+        <div class="buttons">
+            <button class="button icon ion-android-arrow-back" ng-click="goBackView()">返回上一页</button>
+        </div>
+        <div class="title" style="text-align: center;margin-top: 5px">
+            <button class="button icon ion-ios-search-strong" ng-click="showFilterBar()">搜索</button>
+        </div>
+        <div class="buttons">
+            <button class="button icon ion-ios-home" ng-click="goToMain()">首页</button>
+        </div>
+    </ion-header-bar>
+
+
+    <ion-content direction="y" scrollbar-y="false" overflow-scroll='false' style="margin-bottom: 45px">
+
+        <!--<ion-refresher pulling-icon="ion-arrow-down-b" on-refresh="refreshItems()">-->
+        <!--</ion-refresher>-->
+
+        <ion-list>
+            <ion-item ng-repeat="item in moreProductItems" >
+                <table style="">
+                    <tr>
+                        <td style="padding-left: 20px"><span class="item-text-wrap">{{item.itemdesc}}</span></td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left: 20px;margin-top: 5px">确认件数:<input id="newProductInput{{$index}}" placeholder="请输入件数!" onkeyup="if(/\D/.test(this.value)){alert('只能输入数字');this.value='';}" ng-model="aaa" ng-change="addNewProduct($index,'insert','newProductInput')"></td>
+                    </tr>
+                </table>
+
+            </ion-item>
+        </ion-list>
+
+        <div ng-if="moreProductItems !== undefined && !moreProductItems.length" class="no-results" style="text-align: center">
+            <br/>
+            <p>无结果!</p>
+        </div>
+        <ion-infinite-scroll id="myProductScroll" ng-if="isShowProductScroll" on-infinite="loadMoreProduct()"  distance="1%">
+        </ion-infinite-scroll>
+    </ion-content>
+    <table>
+        <tr>
+            <td><button class="button button-calm button-small" style="position: fixed;bottom: 5px;width: 100%" ng-click="submitTheNewProduct('insert')">提交</button></td>
+        </tr>
+    </table>
+</ion-view>
+
+
+
+

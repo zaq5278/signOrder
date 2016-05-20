@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>    <title></title>
+    <script src="jQuery/jquery-2.1.4.js"></script>
+    <script src="jQuery/jquery-ui.min.js"></script>
+    <script src="jQuery/jquery.mobile-1.4.5.min.js"></script>
+    <script src="cssAndJS/productDetailJs.js"></script>
+    <link type="text/css" rel="stylesheet" href="jQuery/jquery-ui.min.css">
+    <link type="text/css" rel="stylesheet" href="jQuery/jquery.mobile-1.4.5.min.css">
+    <link type="text/css" rel="stylesheet" href="cssAndJS/productDetailCss.css">
+</head>
+<body>
+<div data-role="page">
+    <!--<div data-role="header"></div>-->
+    <div data-role="content">
+        <div>
+            <button id="goBackButton" onclick="goBackMain()">返回首页</button>
+            <button id="beforeButton" onclick="goToBefore()">上一页</button>
+        </div>
+        <div id="mainDiv" style="width: 100%">
+            <!--使用js动态加载页面-->
+        </div>
+        <script>
+
+            for (var i = 0;i<5;i++){
+                addNode();
+            }
+        </script>
+    </div>
+    <div style="height: 45px"></div>
+    <button id="button">确认提交</button>
+</div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<html ng-app="mySuperApp">
+<head>
+    <meta charset="utf-8">
+    <title>
+        $ionicModal自定义动画效果
+    </title>
+
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link href="http://code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+    <script src="http://code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+    <style>
+        /** 向右 **/
+        .slide-in-right {
+            -webkit-transform: translateX(-100%);
+            transform: translateX(-100%); }
+
+        .slide-in-right.ng-enter, .slide-in-right > .ng-enter {
+            -webkit-transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms;
+            transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms; }
+
+        .slide-in-right.ng-enter-active, .slide-in-right > .ng-enter-active {
+            -webkit-transform: translateX(0);
+            transform: translateX(0); }
+
+        .slide-in-right.ng-leave, .slide-in-right > .ng-leave {
+            -webkit-transition: all ease-in-out 250ms;
+            transition: all ease-in-out 250ms; }
+
+        /** 向左 **/
+        .slide-in-left {
+            -webkit-transform: translateX(100%);
+            transform: translateX(100%); }
+
+        .slide-in-left.ng-enter, .slide-in-left > .ng-enter {
+            -webkit-transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms;
+            transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms; }
+
+        .slide-in-left.ng-enter-active, .slide-in-left > .ng-enter-active {
+            -webkit-transform: translateX(0);
+            transform: translateX(0); }
+
+        .slide-in-left.ng-leave, .slide-in-left > .ng-leave {
+            -webkit-transition: all ease-in-out 250ms;
+            transition: all ease-in-out 250ms; }
+    </style>
+
+</head>
+<body class="padding" ng-controller="MyCtrl">
+<button ng-click="openModal()">点击我</button>
+<script id="my-modal.html" type="text/ng-template">
+    <ion-modal-view>
+        <ion-header-bar>
+            <h1 class="title">My Modal title</h1>
+        </ion-header-bar>
+        <ion-content>
+            Hello!
+        </ion-content>
+    </ion-modal-view>
+</script>
+<script>
+    angular.module('mySuperApp', ['ionic'])
+        .controller('MyCtrl',function($scope, $ionicModal) {
+
+            $ionicModal.fromTemplateUrl('my-modal.html', {
+                scope: $scope,
+                animation: 'slide-in-left'// <---- 改变这里，默认是'slide-in-up' 换成slide-in-left试试
+            }).then(function(modal) {
+                $scope.modal = modal;
+            });
+            $scope.openModal = function() {
+                $scope.modal.show();
+            };
+            $scope.closeModal = function() {
+                $scope.modal.hide();
+            };
+            //Cleanup the modal when we're done with it!
+            $scope.$on('$destroy', function() {
+                $scope.modal.remove();
+            });
+            // Execute action on hide modal
+            $scope.$on('modal.hidden', function() {
+                // Execute action
+            });
+            // Execute action on remove modal
+            $scope.$on('modal.removed', function() {
+                // Execute action
+            });
+
+
+
+        });
+</script>
+</body>
+</html>

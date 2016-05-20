@@ -1,0 +1,17 @@
+#saveOrderButton{
+    width:30%;
+    font-size: 15px;
+    padding: 5px 0 5px 0;/*上左下右调整*/
+    margin: 0 auto;
+    position: fixed;
+    bottom: 10px;
+}
+#sendCarButton{
+    width:30%;
+    font-size: 15px;
+    padding: 5px 0 5px 0;/*上左下右调整*/
+    margin: 0 12.5%;
+    position: fixed;
+    bottom: 10px;
+}
+

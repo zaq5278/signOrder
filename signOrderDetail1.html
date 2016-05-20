@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>    <title></title>
+    <script src="jQuery/jquery-2.1.4.js"></script>
+    <script src="jQuery/jquery-ui.min.js"></script>
+    <script src="jQuery/jquery.mobile-1.4.5.min.js"></script>
+    <script src="cssAndJS/signOrderDetailJs.js"></script>
+    <link type="text/css" rel="stylesheet" href="jQuery/jquery-ui.min.css">
+    <link type="text/css" rel="stylesheet" href="jQuery/jquery.mobile-1.4.5.min.css">
+    <link type="text/css" rel="stylesheet" href="cssAndJS/signOrderDetailCss.css">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
+    <!--<script src="http://api.map.baidu.com/api?v=2.0" type="text/javascript"></script>-->
+    <script>
+        function getLocation(){
+            var options={
+                enableHighAccuracy:true,
+                maximumAge:1000
+            };
+            if(navigator.geolocation){
+                //浏览器支持geolocation
+                navigator.geolocation.getCurrentPosition(onSuccess,onError,options);
+
+            }else{
+                //浏览器不支持geolocation
+                alert("您的浏览器不支持定位！");
+            }
+        }
+
+        //成功时
+        function onSuccess(position){
+            //返回用户位置
+            //经度
+            var longitude =position.coords.longitude;
+            //纬度
+            var latitude = position.coords.latitude;
+            var map = new BMap.Map("allmap");
+            var point = new BMap.Point(longitude-0.008774687519,latitude+0.00374531687912);
+            var gc = new BMap.Geocoder();
+            gc.getLocation(point, function(rs){
+                var addComp = rs.addressComponents;
+                var address = addComp.province + addComp.city + addComp.district + addComp.street + addComp.streetNumber;
+                document.getElementById("map").innerHTML = address;
+            });
+        }
+        //失败时
+        function onError(error){
+            switch(error.code){
+                case 1:
+                    alert("位置服务被拒绝");
+                    break;
+
+                case 2:
+                    alert("暂时获取不到位置信息");
+                    break;
+
+                case 3:
+                    alert("获取信息超时");
+                    break;
+
+                case 4:
+                    alert("未知错误");
+                    break;
+            }
+
+        }
+        window.onload=getLocation;
+    </script>
+
+
+    <!--另一种位置实现-->
+    <!--<script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>-->
+    <!--<script type="text/javascript" src="http://www.xarg.org/download/jquery.webcam.js"></script>-->
+    <!--<script type="text/javascript">-->
+        <!--var map;-->
+        <!--var gpsPoint;-->
+        <!--var baiduPoint;-->
+        <!--var gpsAddress;-->
+        <!--var baiduAddress;-->
+
+        <!--function getLocation() {-->
+            <!--//根据IP获取城市-->
+            <!--var myCity = new BMap.LocalCity();-->
+            <!--myCity.get(getCityByIP);-->
+
+            <!--//获取GPS坐标-->
+            <!--if (navigator.geolocation) {-->
+                <!--navigator.geolocation.getCurrentPosition(showMap, handleError, { enableHighAccuracy: true, maximumAge: 1000 });-->
+            <!--} else {-->
+                <!--alert("您的浏览器不支持获取地理位置服务");-->
+            <!--}-->
+        <!--}-->
+
+        <!--function showMap(value) {-->
+            <!--var longitude = value.coords.longitude;-->
+            <!--var latitude = value.coords.latitude;-->
+            <!--gpsPoint = new BMap.Point(longitude, latitude);    // 创建点坐标-->
+            <!--BMap.Convertor.translate(gpsPoint, 0, translateCallback);-->
+        <!--}-->
+        <!--translateCallback = function (point) {-->
+            <!--baiduPoint = point;-->
+            <!--var geoc = new BMap.Geocoder();-->
+            <!--geoc.getLocation(baiduPoint, getCityByBaiduCoordinate);-->
+        <!--};-->
+        <!--function getCityByBaiduCoordinate(rs) {-->
+            <!--baiduAddress = rs.addressComponents;-->
+            <!--var address = baiduAddress.province + baiduAddress.city + baiduAddress.district + baiduAddress.street + baiduAddress.streetNumber;-->
+            <!--alert(baiduAddress.streetNumber);-->
+            <!--document.getElementById("map").innerHTML = address;-->
+
+        <!--}-->
+        <!--//根据IP获取城市-->
+        <!--function getCityByIP(rs) {-->
+            <!--var cityName = rs.name;-->
+        <!--}-->
+        <!--function handleError(value) {-->
+            <!--switch (value.code) {-->
+                <!--case 1:-->
+                    <!--alert("位置服务被拒绝");-->
+                    <!--break;-->
+                <!--case 2:-->
+                    <!--alert("暂时获取不到位置信息");-->
+                    <!--break;-->
+                <!--case 3:-->
+                    <!--alert("获取信息超时");-->
+                    <!--break;-->
+                <!--case 4:-->
+                    <!--alert("未知错误");-->
+                    <!--break;-->
+            <!--}-->
+        <!--}-->
+        <!--function init() {-->
+            <!--getLocation();-->
+        <!--}-->
+        <!--$(document).ready(init());-->
+    <!--</script>-->
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js "></script>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js "></script>
+    <script>
+
+        wx.config({
+            debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+            appId: 'wx6c182fb7b8642305', // 必填，公众号的唯一标识
+            timestamp: 1414587457, // 必填，生成签名的时间戳
+            nonceStr: 'Wm3WZYTPz0wzccnW', // 必填，生成签名的随机串
+            signature: '9b728f7fc4168e037cff7951b1a3e169644d019e',// 必填，签名，见附录1
+            jsApiList: ['chooseImage','previewImage','uploadImage','downloadImage','openLocation','getLocation'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+        });
+//        function getLocation(){
+//            wx.getLocation({
+//                type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
+//                success: function (res) {
+//                    var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+//                    var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+//                    var speed = res.speed; // 速度，以米/每秒计
+//                    var accuracy = res.accuracy; // 位置精度
+//                    var map = new BMap.Map("allmap");
+//                    var point = new BMap.Point(longitude-0.008774687519,latitude+0.00374531687912);
+//                    var gc = new BMap.Geocoder();
+//                    gc.getLocation(point, function(rs){
+//                        var addComp = rs.addressComponents;
+//                        alert(addComp.province + addComp.city + addComp.district + addComp.street + addComp.streetNumber);
+//                    });
+//                }
+//            });
+//        }
+        //拍照
+        function chooseImage(){
+            wx.chooseImage({
+                count: 1, // 默认9
+                sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+                sourceType: ['camera'], // 可以指定来源是相册还是相机，默认二者都有
+                success: function (res) {
+                    var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<div data-role="page">
+    <!--<div data-role="header"></div>-->
+    <div data-role="content">
+        <div>
+            <button id="goBackButton" onclick="goBackMain()">返回首页</button>
+            <button id="beforeButton" onclick="goToBefore()">上一页</button>
+        </div>
+        <div style="height: 10px"></div>
+        <table style="width:100%">
+            <tr>
+                <td>订单号:</td>
+                <td style="margin-left: -50px">49697-nbkn</td>
+                <td>订单总量:</td>
+                <td>2550</td>
+            </tr>
+        </table>
+        <table style="width:100%">
+            <tr>
+                <td><button id="detailButton" onclick="goProductDetail()">产品详情</button></td>
+                <td><div style="width: 20px"></div></td>
+                <td style="width:75px">确认件数:</td>
+                <td><label><input type="tel" onkeyup="if(/\D/.test(this.value)){alert('只能输入数字');this.value='';}"></label></td>
+            </tr>
+        </table>
+        <table style="width:100%">
+            <tr>
+                <td>车牌号码:</td>
+                <td><label><input placeholder="请输入车牌号" onkeyup="value=value.replace(/[^\a-\z\A-\Z\u4E00-\u9FA5\d]/g,'')"></label></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>当前位置:</td>
+                <td id="map"></td>
+            </tr>
+        </table>
+        <table style="width:100%">
+            <tr>
+                <td style="width:75px">拍照上传:</td>
+                <td><button class="photoButton" onclick="chooseImage()">车头</button></td>
+                <td><button class="photoButton" onclick="chooseImage()">车尾</button></td>
+                <td><button class="photoButton" onclick="chooseImage()">单据</button></td>
+            </tr>
+        </table>
+        <!--获取照片经纬度信息-->
+        <!--<script type="text/javascript">-->
+            <!--document.getElementById("file-input").onchange = function(e) {-->
+                <!--EXIF.getData(e.target.files[0], function() {-->
+                    <!--alert("经度"+EXIF.getAllTags(this).GPSLongitude+"    "+"纬度"+EXIF.getAllTags(this).GPSLatitude);-->
+
+                <!--});-->
+            <!--}-->
+        <!--</script>-->
+        <table>
+            <tr>
+                <td>温度是否合格:</td>
+                <td><label><input type="radio" data-mini="true" name="1">是</label></td>
+                <td><label><input type="radio" data-mini="true" name="1">否</label></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>铅封是否完好:</td>
+                <td><label><input type="radio" data-mini="true" name="2">是</label></td>
+                <td><label><input type="radio" data-mini="true" name="2">否</label></td>
+            </tr>
+        </table>
+        <div style="height: 10px"></div>
+        <button>确认提交</button>
+    </div>
+
+</div>
+</body>
+</html>

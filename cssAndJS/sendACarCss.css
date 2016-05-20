@@ -1,0 +1,54 @@
+#sendCarButton{
+    /*background-color: skyblue;*/
+    width: 130px;/*设置宽度自适应*/
+    margin: 10px 10px auto;/*设置文字自适应*/
+    /*color: white;*/
+    display: inline;
+    text-shadow: none;
+    border-radius: 65px;
+    outline: none;
+    background-image: url('../img/woyaopaiche.png');
+    float: left;
+    /*height: auto;*/
+}
+#havedOrder{
+    /*background-color: skyblue;*/
+    width: 130px;
+    margin: 10px 10px auto;
+    text-overflow: clip;/*设置文字自适应*/
+    /*color: white;*/
+    display: inline;
+    float: right;
+    border-radius: 65px;
+    outline: none;
+    background-image: url('../img/yibaocundepaichedan.png');
+    text-shadow: none;
+    /*height: 150px;*/
+}
+#sunmiedOrder{
+     /*background-color: skyblue;*/
+     width: 130px;
+    text-shadow: none;
+    margin: 10px 10px auto;
+    border-radius: 65px;
+    outline: none;
+    background-image: url('../img/yitijiaodepaichedan.png');
+    text-overflow: clip;/*设置文字自适应*/
+    /*color: white;*/
+    display: inline;
+    /*height: 135px;*/
+ }
+#goBackButton{
+    width:28%;
+    padding: 5px 0 5px 0;/*上左下右调整*/
+    font-size: 14px;
+    display: inline;
+    float: left;
+}
+#beforeButton{
+    width:28%;
+    padding: 5px 0 5px 0;/*上左下右调整*/
+    font-size: 14px;
+    display: inline;
+    float: right;
+}

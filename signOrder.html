@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name = "format-detection" content = "telephone=no"><!--去除ios电话号码帮助-->
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <title></title>
+
+    <script type="text/javascript" src="lib/ionic/js/ionic.bundle.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="lib/ionic/css/ionic.min.css">
+    <!--模糊搜索的js-->
+    <link href="lib/ionic/css/ionic.filter.bar.min.css" rel="stylesheet" type="text/css">
+    <script src="lib/ionic/js/ionic.filter.bar.min.js" type="text/javascript"></script>
+    <!--<script src="cordova.js"></script>-->
+    <!--<script src="cssAndJS/angular.datetime.js"></script>-->
+    <!--<link href="cssAndJS/bootstrap.min.css" rel="stylesheet">-->
+    <!--<script src="cssAndJS/jquery.min.js"></script>-->
+    <!--<script src="cssAndJS/bootstrap.min.js"></script>-->
+
+    <!--<link href="cssAndJS/jquery.datetimepicker.css" rel="stylesheet">-->
+    <!--<script src="cssAndJS/jquery.datetimepicker.js"></script>-->
+    <script src="cssAndJS/jquery-1.9.1.min.js"></script>
+    <!--用于调用微信api点击js-->
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js "></script>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js "></script>
+    <!--用于调用百度地图的js-->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
+    <!--用于评价的js-->
+    <script type="text/javascript" src="lib/ionic/js/ionic-rating.min.js"></script>
+    <link href="lib/ionic/css/ionic-rating.css" rel="stylesheet" type="text/css">
+    <!--用于调用日期插件的js-->
+    <link href="cssAndJS/mobiscroll.custom-2.5.0.min.css" rel="stylesheet" type="text/css" />
+    <script src="cssAndJS/mobiscroll.custom-2.5.0.min.js" type="text/javascript"></script>
+
+
+
+    <!--自己的js-->
+    <script type="text/javascript" src="js/signOrderController.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+
+    <!--模态动画-->
+    <style>
+        /** 向右 **/
+        .slide-in-right {
+            -webkit-transform: translateX(-100%);
+            transform: translateX(-100%); }
+
+        .slide-in-right.ng-enter, .slide-in-right > .ng-enter {
+            -webkit-transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms;
+            transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms; }
+
+        .slide-in-right.ng-enter-active, .slide-in-right > .ng-enter-active {
+            -webkit-transform: translateX(0);
+            transform: translateX(0); }
+
+        .slide-in-right.ng-leave, .slide-in-right > .ng-leave {
+            -webkit-transition: all ease-in-out 250ms;
+            transition: all ease-in-out 250ms; }
+
+        /** 向左 **/
+        .slide-in-left {
+            -webkit-transform: translateX(100%);
+            transform: translateX(100%); }
+
+        .slide-in-left.ng-enter, .slide-in-left > .ng-enter {
+            -webkit-transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms;
+            transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms; }
+
+        .slide-in-left.ng-enter-active, .slide-in-left > .ng-enter-active {
+            -webkit-transform: translateX(0);
+            transform: translateX(0); }
+
+        .slide-in-left.ng-leave, .slide-in-left > .ng-leave {
+            -webkit-transition: all ease-in-out 250ms;
+            transition: all ease-in-out 250ms; }
+    </style>
+
+</head>
+<body ng-controller="mainController">
+
+<ion-nav-view></ion-nav-view>
+</body>
+</html>

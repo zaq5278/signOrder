@@ -1,0 +1,38 @@
+#goBackButton{
+    width:25%;
+    padding: 5px 0 5px 0;/*上左下右调整*/
+    font-size: 14px;
+    display: inline;
+    /*float: left;*/
+}
+#beforeButton{
+    width:25%;
+    padding: 5px 0 5px 0;/*上左下右调整*/
+    font-size: 14px;
+    display: inline;
+    float: right;
+}
+.img{
+    width: 20px;
+    height: 20px;
+}
+.span{
+    margin-left: 2px;
+}
+.label{
+    width: 60%;
+    padding-right: 8px;
+}
+#submitButton{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#textarea{
+    height: 300px;
+    max-height: 300px;
+
+}
+/*调整输入框的初始固定大小*/
+textarea.ui-input-text{
+    min-height:100px;
+}

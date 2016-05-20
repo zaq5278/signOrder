@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>    <title></title>
+    <script src="jQuery/jquery-2.1.4.js"></script>
+    <script src="jQuery/jquery-ui.min.js"></script>
+    <script src="jQuery/jquery.mobile-1.4.5.min.js"></script>
+    <script src="cssAndJS/sendACarCssJS.js"></script>
+    <link type="text/css" rel="stylesheet" href="jQuery/jquery-ui.min.css">
+    <link type="text/css" rel="stylesheet" href="jQuery/jquery.mobile-1.4.5.min.css">
+    <link type="text/css" rel="stylesheet" href="cssAndJS/sendACarCss.css">
+</head>
+<body>
+<div data-role="page">
+    <div data-role="content" style="height: 100%">
+
+        <button id="goBackButton" onclick="goBackMain()">返回首页</button>
+        <button id="beforeButton" onclick="goToBefore()">上一页</button>
+        <div style="padding-top: 2%"></div>
+        <table>
+            <tr>
+                <td><button id="sendCarButton" onclick="iWantSendCar()"></button></td>
+                <td width="40%"></td>
+                <td><button id="havedOrder" onclick="haveSavedOrder()"></button></td>
+            </tr>
+            <tr >
+                <td><button id="sunmiedOrder" onclick="haveSubmitOrder()"></button></td>
+            </tr>
+        </table>
+
+    </div>
+
+</div>
+</body>
+</html>

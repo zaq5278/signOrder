@@ -1,0 +1,22 @@
+#goBackButton{
+    width:25%;
+    padding: 5px 0 5px 0;/*上左下右调整*/
+    font-size: 14px;
+    display: inline;
+    /*float: left;*/
+}
+#beforeButton{
+    width:25%;
+    padding: 5px 0 5px 0;/*上左下右调整*/
+    font-size: 14px;
+    display: inline;
+    float: right;
+}
+#detailButton{
+    font-size: 15px;
+    padding: 8px 8px 8px 8px;
+}
+.photoButton{
+    font-size: 15px;
+    padding: 8px 8px 8px 8px;
+}

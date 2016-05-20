@@ -1,0 +1,54 @@
+<ion-view>
+
+    <ion-header-bar align-title="left" class="bar-calm">
+        <div class="buttons">
+            <button class="button icon ion-android-arrow-back" ng-click="goBackSignOrderDetailView()">返回上一页</button>
+        </div>
+        <h1 class="title"></h1>
+        <div class="buttons">
+            <button class="button icon ion-forward" ng-click="submitTheNewProduct('update')">提交</button>
+        </div>
+    </ion-header-bar>
+
+    <ion-content  overflow-scroll='false' style="margin-bottom: 40px">
+
+        <div ng-repeat="theProductDetail in productDetailList">
+            <div style="border: double 1px #dddddd;margin-left: 10px;width: 94%;margin-top: 10px">
+                <table style="width: 100%;margin-top: 3px;margin-left: 8px;">
+                    <tr>
+                        <td style="font-weight: 600">{{theProductDetail.itemdesc}}</td>
+                    </tr>
+                </table>
+                <table style="width: 100%;margin-top: 3px;margin-left: 8px">
+                    <tr>
+                        <td style="margin-right: 2px;width: 100px">数量:{{theProductDetail.lfimg}}</td>
+                        <td style="width: 65px">确认件数:</td>
+                        <td><input id="productInput{{$index}}" style="font-size: 15px;width:65px" value="{{theProductDetail.nnumber}}" ng-model="theProductDetail.nnumber" ng-change="changeTheOrderInputValue($index,'update','productInput');addNewProduct($index,'update','productInput')"></td>
+                    </tr>
+                </table>
+                <table style="width: 100%;margin-top: 3px;margin-left: 8px">
+                    <tr>
+                        <td>差异原因:<span id="productSpan{{$index}}" style="color: red;">{{theProductDetail.reason}}</span><button class="button button-small button-outline button-calm" style="margin-left: 160px;margin-top: -15px" ng-show="isCanRemoveProduct(theProductDetail.lfimg)" ng-click="removeTheChuanHuoProduct($index)">删除</button></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!--</ion-scroll>-->
+        <!--<ion-infinite-scroll id="myProductScroll" ng-if="isShowProductScroll" on-infinite="loadMoreProduct()"  distance="1%">-->
+        <!--</ion-infinite-scroll>-->
+
+
+
+
+    </ion-content>
+
+    <table class="tabs" style="margin:0 auto;width:88%;background: transparent;border: none">
+        <tr style="text-align: center">
+            <td style="text-align: center;"><button class="button button-calm" style="position: fixed;bottom: 5px;width: 50px;height: 50px;border-radius: 25px;font-size: 13px" ng-click="addMoreProduct()">增加</button></td>
+        </tr>
+    </table>
+
+
+
+</ion-view>

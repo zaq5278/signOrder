@@ -1,0 +1,49 @@
+#goBackButton{
+    width:25%;
+    padding: 5px 0 5px 0;/*上左下右调整*/
+    font-size: 14px;
+    display: inline;
+    /*float: left;*/
+}
+#beforeButton{
+    width:25%;
+    padding: 5px 0 5px 0;/*上左下右调整*/
+    font-size: 14px;
+    display: inline;
+    float: right;
+}
+.td1{
+    width: 40px;
+}
+.td3{
+    width: 80px;
+}
+.otherDiv{
+    width: 40px;
+}
+.div1{
+      border: 1px #c5c5c5;
+      border-style: double;
+      margin-top: 10px;
+}
+.div2{
+    height: 80px;
+    margin-top: 5px;
+}
+.tb2{
+    margin-top: -20px;
+}
+#button{
+    width: 96%;
+    position: fixed;
+    bottom: -3px;
+    background-color: skyblue;
+    text-shadow: none;
+    padding: 0 0 0 0;
+    height: 7%;
+    margin-right: 2%;
+    margin-left: 2%;
+}
+.span{
+    font-weight: bold;
+}

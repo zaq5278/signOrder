@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>    <title></title>
+    <script src="jQuery/jquery-2.1.4.js"></script>
+    <script src="jQuery/jquery-ui.min.js"></script>
+    <script src="jQuery/jquery.mobile-1.4.5.min.js"></script>
+    <script src="cssAndJS/orderAndSendCarJS.js"></script>
+    <link type="text/css" rel="stylesheet" href="jQuery/jquery-ui.min.css">
+    <link type="text/css" rel="stylesheet" href="jQuery/jquery.mobile-1.4.5.min.css">
+    <link type="text/css" rel="stylesheet" href="cssAndJS/orderAndSendCarCss.css">
+    <script>
+//        window.onload=function(){
+//            if (sessionStorage.login == 1){
+//                document.getElementById("signDiv").hidden = true;
+//            }else if(sessionStorage.login == 0){
+//                document.getElementById("sendCarDiv").hidden = true;
+//            }else{
+//
+//            }//此方法是界面加载完成后走
+//        };
+//        $(document).ready(function(){
+//            if (sessionStorage.login == 0){
+//                document.getElementById("signDiv").hidden = true;
+//            }else if(sessionStorage.login == 0){
+//                document.getElementById("sendCarDiv").hidden = true;
+//            }else{
+//
+//            }
+//        });//此方法是界面准备加载并出现时触发
+    </script>
+</head>
+<body>
+    <div data-role="page">
+    <!--<div data-role="header" style="height: 50px;background-color: transparent"></div>-->
+    <div data-role="content">
+        <br/>
+        <div id="myDiv" style="text-align: center;border: none;width: 150px;border-radius: 75px;margin: 0 auto;background: transparent">
+        <!--<div id="sendCarDiv">-->
+        <!--<button id="sendCarButton" onclick="goSendACar()" style="background-image: url('paiche1.png')"></button>-->
+        <!--</div>-->
+        <!--<br/>-->
+        <!--<div id="signDiv">-->
+        <!--<button id="signOrder" onclick="goSeeTheOrder()">订单签收</button>-->
+        <!--</div>-->
+        <!--<br/><br/><br/>-->
+        <!--<button id="retirement">退出</button>-->
+        </div>
+        <script>
+            for (i = 0;i<functionArray.length;i++){
+                if (functionArray[i].name == "派车"){
+                    orderName = functionArray[i].name;
+                    creatNode();
+                }else if(functionArray[i].name == "订单签收") {
+                    orderName = functionArray[i].name;
+                    creatNode();
+                }
+            }
+        </script>
+        </div>
+        <div style="height: 100px;padding-top: 20px">
+
+            <button onclick="goOut()" id="goOutButton" style="text-shadow: none"  data-textvisible="true" data-textonly="false">退出登录</button>
+        </div>
+    </div>
+</body>
+</html>

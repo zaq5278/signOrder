@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>    <title></title>
+    <script src="jQuery/jquery-2.1.4.js"></script>
+    <script src="jQuery/jquery-ui.min.js"></script>
+    <script src="jQuery/jquery.mobile-1.4.5.min.js"></script>
+    <script src="cssAndJS/evaluationTheSignOrderJs.js"></script>
+    <link type="text/css" rel="stylesheet" href="jQuery/jquery-ui.min.css">
+    <link type="text/css" rel="stylesheet" href="jQuery/jquery.mobile-1.4.5.min.css">
+    <link type="text/css" rel="stylesheet" href="cssAndJS/evaluationTheSignOrderCss.css">
+</head>
+<body>
+<div data-role="page">
+    <!--<div data-role="header"></div>-->
+    <div data-role="content">
+        <div>
+            <button id="goBackButton" onclick="goBackMain()">返回首页</button>
+            <button id="beforeButton" onclick="goToBefore()">上一页</button>
+        </div>
+
+        <div style="height: 15px"></div>
+        <div>
+            <table style="margin: 0 auto;height: 100px">
+                <tr>
+                    <td>车牌号:</td>
+                    <td>豫A555665</td>
+                </tr>
+                <tr  style="padding-top: 20px">
+                    <td>订单号:</td>
+                    <td>49597-njkl</td>
+                </tr>
+                <tr>
+                    <td>总件数:</td>
+                    <td>2550</td>
+                </tr>
+            </table>
+        </div>
+        <div style="height: 12px"></div>
+        <table style="width:100%">
+            <tr>
+                <td><label class="label"><input type="radio" data-mini="true" name="1"><img src="haoping.png" class="img"><span class="span">好评</span></label></td>
+                <td><label class="label"><input type="radio" data-mini="true" name="1"><img src="zhongping.png" class="img"><span class="span">中评</span></label></td>
+                <td><label class="label"><input type="radio" data-mini="true" name="1"><img src="chaping.png" class="img"><span class="span">差评</span></label></td>
+            </tr>
+        </table>
+
+        <label style="width: 100%;margin: 0 auto"><textarea placeholder="备注:" id="textarea" cols="40" rows="8"></textarea></label>
+        <div style="height: 18px"></div>
+
+        <button id="submitButton">确认提交</button>
+
+    </div>
+</div>
+</body>
+</html>

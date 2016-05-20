@@ -1,0 +1,43 @@
+#goBackButton{
+    width:25%;
+    padding: 5px 0 5px 0;/*上左下右调整*/
+    font-size: 14px;
+}
+.table {
+    margin-top: -20px;
+}
+/*下面的输入框*/
+.otherInput{
+    border-style: none;
+    width: 95%;
+    outline: none;
+    background-color: transparent;
+}
+/*上面三个输入框*/
+.userNameInput{
+    width: 100%;
+}
+#selectOrderButton{
+    width:40%;
+    font-size: 15px;
+    padding: 5px 0 5px 0;/*上左下右调整*/
+    margin: 20px auto;
+}
+#readOrderButton{
+    width:40%;
+    font-size: 15px;
+    padding: 5px 0 5px 0;/*上左下右调整*/
+    margin: 20px auto;
+}
+#saveOrderButton{
+    width:100px;
+    font-size: 15px;
+    padding: 5px 0 5px 0;/*上左下右调整*/
+    margin: 20px auto;
+}
+#sendCarButton{
+    width:100px;
+    font-size: 15px;
+    padding: 5px 0 5px 0;/*上左下右调整*/
+    margin: 20px auto;
+}

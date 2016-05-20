@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1.0">-->
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <title>物流商登录—思念食品掌上CRM</title>
+
+    <script src="jQuery/jquery-2.1.4.js"></script>
+    <script src="jQuery/jquery-ui.min.js"></script>
+    <script src="jQuery/jquery.mobile-1.4.5.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="jQuery/jquery-ui.min.css">
+    <link type="text/css" rel="stylesheet" href="jQuery/jquery.mobile-1.4.5.min.css">
+
+    <link type="text/css" rel="stylesheet" href="cssAndJS/logincss.css">
+    <script src="cssAndJS/loginJS.js"></script>
+    <style>
+
+        ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+            color: white;
+        }
+        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color: white;
+            opacity:  1;
+        }
+        ::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color: white;
+            opacity:  1;
+        }
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: white;
+        }
+
+    </style>
+    <!--<script>-->
+        <!--var url="http://222.88.22.75/preorderServiceController.do?getCarInfoList?callback=?";-->
+        <!--$.getScript(url,function(data){-->
+            <!--alert(data);-->
+        <!--});-->
+    <!--</script>-->
+
+
+</head>
+<body>
+<div data-role="page" id="loginPageDiv" style="background-image: url('bg.jpg')">
+    <div  data-role="content" style="text-align: center">
+        <!--<br/><br/><br/><br/><br/><br/>-->
+        <img src="logo.png" id="logoImg">
+        <table style="margin: 0 auto;width:100%;height: 50px;margin-top: -20px">
+            <tr>
+                <td><p style="color: white;text-shadow: none">账号:</p></td>
+                <td><input class="userNameInput" type="cahce" id="userName" style="width:100%;font-size: 15px" placeholder ="请输入用户名"></td>
+            </tr>
+        </table>
+        <div style="width: 92%;height: 1px;background-color: white;margin: 0 auto;margin-top: -10px"></div>
+
+        <table style="margin: 0 auto; width: 100%;height: 50px">
+            <tr>
+                <td><p style="color: white;text-shadow: none">密码:</p></td>
+                <td><input class="userNameInput" id="passWord" type="password" style="width:100%;font-size: 15px" placeholder ="请输入密码" data-role="none"></td>
+            </tr>
+        </table>
+        <div style="width: 92%;height: 1px;background-color: white;margin: 0 auto;margin-top: -10px;"></div>
+        <div style="height: 100px;padding-top: 20px">
+
+        <button onclick="login()" id="loginButton" style="text-shadow: none" class="show-page-loading-msg" data-msgtext="登录中..." data-textvisible="true" data-textonly="false">登 录</button>
+        </div>
+        </div>
+</div>
+</body>
+</html>
+

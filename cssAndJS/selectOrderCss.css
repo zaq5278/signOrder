@@ -1,0 +1,81 @@
+#goBackButton{
+    width:25%;
+    padding: 5px 0 5px 0;/*上左下右调整*/
+    font-size: 14px;
+    display: inline;
+    /*float: left;*/
+}
+#beforeButton{
+    width:25%;
+    padding: 5px 0 5px 0;/*上左下右调整*/
+    font-size: 14px;
+    display: inline;
+    float: right;
+}
+/*.otherInput{*/
+    /*margin-left: -8px;*/
+    /*width:100%;*/
+    /*border-style: none;*/
+    /*outline: none;*/
+    /*background-color: transparent;*/
+    /*font-size: 13px;*/
+    /*margin-top: 6px;*/
+/*}*/
+#retirement{
+    width: 96%;
+    position: fixed;
+    bottom: -3px;
+    background-color: skyblue;
+    text-shadow: none;
+    margin-left: 2%;
+    padding: 0 0 0 0;
+    margin-right: 2%;
+    height: 6%;
+}
+.div{
+    height: 82px;
+    border: 1px #c5c5c5;
+    border-style: double;
+    margin-top: 10px;
+}
+.myInput{
+    width: 25px;
+    height: 25px;
+    margin-bottom: 10px;
+    position: static;
+}
+.td2{
+    font-size: 13px;
+    width: 50px;
+}
+#tb2{
+    width: 100%;height: 40%;margin-top: -18px;
+}
+#tb3{
+    background-color: #eeeeee;width: 100%;height: 40%;margin-top: -8px;
+}
+#td13{
+    width: 80px;font-size: 14px;text-shadow: none;
+}
+#td23{
+    font-size: 12px;padding: 0 0 0 0;
+}
+#b2{
+    margin-left: -10px;text-shadow: none;
+}
+.td11{
+    font-size: 13px;width: 60px;
+}
+.otherTd{
+    font-size: 13px;
+}
+#td4{
+    padding-left: 10px;
+}
+.bButton{
+    padding: 5px 5px 5px 5px;
+    font-size: 14px;
+}
+.timeInput{
+    width: 48%;
+}

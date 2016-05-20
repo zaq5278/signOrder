@@ -1,0 +1,66 @@
+#goBackButton{
+    width:25%;
+    padding: 5px 0 5px 0;/*上左下右调整*/
+    font-size: 14px;
+    display: inline;
+    /*float: left;*/
+}
+#beforeButton{
+    width:25%;
+    padding: 5px 0 5px 0;/*上左下右调整*/
+    font-size: 14px;
+    display: inline;
+    float: right;
+}
+
+
+.bButton{
+    padding: 5px 5px 5px 5px;
+    font-size: 14px;
+}
+.timeInput{
+    width: 48%;
+}
+
+
+/*自动布局的css*/
+.div{
+    height: 74px;
+    border: 1px #c5c5c5;
+    border-style: double;
+    margin-top: 8px;
+}
+.allTd{
+    font-size: 14px;
+}
+
+.tb{
+    width: 100%;
+}
+.otherTD{
+    font-size: 14px;
+}
+.lastTD{
+    font-size: 14px;
+    color: skyblue;
+}
+.tb2{
+    width: 100%;
+    background-color: #eeeeee;
+    text-shadow: none;
+}
+.td11{
+    font-size: 14px;
+}
+#button1{
+    font-size: 14px;
+    /*background-color: skyblue;*/
+    text-shadow: none;
+    padding: 5px 5px 5px 5px;
+}
+#button2{
+    font-size: 14px;
+    /*background-color: skyblue;*/
+    text-shadow: none;
+    padding: 5px 5px 5px 5px;
+}

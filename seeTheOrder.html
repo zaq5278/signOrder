@@ -1,0 +1,66 @@
+<ion-view >
+    <ion-header-bar align-title="left" class="bar-calm">
+        <div class="buttons">
+            <button class="button icon ion-android-arrow-back" ng-click="goBackHtmlView()">返回上一页</button>
+        </div>
+        <div class="title" style="text-align: center;margin-top: 5px">
+            <img src="img/sinianlogo.png" style="margin-left: -20px;margin-top: 5px;width: 25px;height: 25px">
+        </div>
+
+        <div class="buttons">
+            <button class="button icon ion-ios-home" ng-click="goToMain()">首页</button>
+        </div>
+    </ion-header-bar>
+    <br/>
+    <ion-content style="width: 100%;margin-top: 5px;" overflow-scroll='false'>
+        <input id="orderNumber" style="width: 94%;margin-left: 10px;" placeholder="请输入订单号进行查询！"/>
+        <table style="width:100%;margin-top: 5px">
+            <tr>
+                <td><input id="jqueryPicker" readonly class="form-control" ng-model="beforeTime" style="width: 90%;margin-left: 10px" ng-click="touch('#jqueryPicker','date')"/>
+                </td>
+                <td>一</td>
+                <td>
+                    <input id="jqueryPicker1" readonly class="form-control" ng-model="lastTime" style="width: 90%;margin-left: 5px" ng-click="touch('#jqueryPicker1','date')"/>
+                </td>
+            </tr>
+        </table>
+        <button class="button button-small" style="width: 93%;margin-left: 10px;margin-top: 10px;padding: -10px 0 0 0;background-color: skyblue" ng-click="checkTheOrder('savedOrder')">查询</button>
+        <!--<ion-scroll id="scroll" style="height: 0">-->
+        <!--<ion-refresher-->
+        <!--pulling-text="下拉刷新..."-->
+        <!--on-refresh="doRefresh()">-->
+        <!--</ion-refresher>-->
+        <div style="margin-top: 10px"></div>
+      <!--<ion-scroll id="myScrollView">-->
+        <div ng-repeat="theCheckOrder in theCheckOrderList" ng-click="lookTheOrderDetail($index)" style="margin-bottom: -15px">
+            <a class="item item-thumbnail-left" href="#" style="padding: 0 0 0 74px">
+                <img src="img/orderIocn.png" style="width: 48px;height: 48px;margin-top: 10px">
+                <table style="width: 100%;margin-top: 15px;font-size: 13px">
+                    <tr>
+                        <td style="margin-right: 15px">订单号:{{theCheckOrder.orderid}}</td>
+                        <td>订单总量:{{theCheckOrder.lfimgsum}}</td>
+                    </tr>
+                </table>
+                <table style="width: 100%;margin-top: 10px;font-size: 13px">
+                    <tr>
+                        <td style="margin-right: 15px">发货日期:{{theCheckOrder.deliverydate}}</td>
+                        <td>订单状态:<span style="color: red">已发货</span></td>
+                    </tr>
+                </table>
+            </a>
+            <!--<table style="width: 100%;margin-top: 3px;margin-left: 2px">-->
+                <!--<tr>-->
+                    <!--<td><div style="width: 2px"></div></td>-->
+                    <!--<td><button class="button button-small button-outline button-calm" style="width: 95%" ng-click="lookTheOrderDetail($index)">订单签收</button></td>-->
+                    <!--<td><div style="width: 50px"></div></td>-->
+                    <!--<td><button class="button button-small button-outline button-calm" style="width: 95%" ng-click="evaluateTheOrder($index)">订单评价</button></td>-->
+                    <!--<td><div style="width: 1px"></div></td>-->
+                <!--</tr>-->
+            <!--</table>-->
+        </div>
+      <!--</ion-scroll>-->
+        <ion-infinite-scroll id="myInfiniteScroll" ng-if="isShowScroll" on-infinite="loadMoreOrder()"  distance="1%">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>
+

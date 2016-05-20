@@ -1,0 +1,35 @@
+#sendCarButton{
+    /*background-color: skyblue;*/
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    font-size: 22px;
+}
+.button{
+    /*background-color: skyblue;*/
+    width: 150px;
+    height: 150px;
+    /*padding-left: 20px;*/
+    border-radius: 75px;
+    outline: none;
+    /*margin: 0 auto;*/
+    /*font-size: 22px;*/
+    margin-top: 10px;
+    background-repeat: no-repeat;
+}
+#retirement{
+    width: 91%;
+    /*position: fixed;*/
+    position: fixed;
+    bottom: 10px;
+    margin: 0 auto;
+    background-color: tomato;
+}
+#goOutButton{
+    width:100%;
+    position: fixed;
+    bottom: 10px;
+    background-color: skyblue;
+    color: white;
+    font-size: 12px;
+}

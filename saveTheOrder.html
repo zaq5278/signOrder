@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>    <title></title>
+    <script src="jQuery/jquery-2.1.4.js"></script>
+    <script src="jQuery/jquery-ui.min.js"></script>
+    <script src="jQuery/jquery.mobile-1.4.5.min.js"></script>
+    <script src="cssAndJS/saveTheOrderJS.js"></script>
+    <link type="text/css" rel="stylesheet" href="jQuery/jquery-ui.min.css">
+    <link type="text/css" rel="stylesheet" href="jQuery/jquery.mobile-1.4.5.min.css">
+    <link type="text/css" rel="stylesheet" href="cssAndJS/saveTheOrderCss.css">
+    <script>
+        $(document).ready(function() {
+            $("#dateInput").datepicker();
+        });
+    </script>
+</head>
+<body>
+<div data-role="page">
+    <div data-role="content">
+        <button id="goBackButton" onclick="goBackMain()">返回首页</button>
+        <button id="beforeButton" onclick="goToBefore()">上一页</button>
+        <!--
+        <div>
+            <table>
+                <tr>
+                    <td class="pp">车牌号码:</td>
+                    <td><input id="areaSelect" class="userNameInput" type="cahce" style="font-size: 15px" disabled="disabled" value="豫A565448"></td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td class="pp">司机姓名:</td>
+                    <td><input id="driverInput" class="userNameInput" type="cahce" style="font-size: 15px" disabled="disabled" value="周奥琪"></td>
+                </tr>
+            </table>
+            <table class="table">
+                <tr>
+                    <td class="pp">联系方式:</td>
+                    <td><input class="userNameInput" type="cache" style="font-size: 15px" disabled="disabled" value="15555555555"></td>
+                </tr>
+            </table>
+            <table class="table">
+                <tr>
+                    <td class="pp">预约时间:</td>
+                    <td><input class="userNameInput" type="cahce" style="font-size: 15px;" disabled="disabled" value="2015年8月12 15:35"></td>
+                </tr>
+            </table>
+            <table class="table" width="100%">
+                <tr>
+                    <td class="pp" style="width: 65px">派车单号:</td>
+                    <td><input class="otherInput" type="cache" disabled="disabled" value="1454884664"></td>
+                    <td class="pp" style="width: 65px">是否拼车:</td>
+                    <td><input class="otherInput" type="cache" id="yesOrNoInput" disabled="disabled" value="是"></td>
+                </tr>
+                <tr>
+                    <td class="pp" style="width: 65px">开单时间:</td>
+                    <td><input class="otherInput" type="cache" disabled="disabled" value="15:22"></td>
+                    <td class="pp" style="width: 65px">要求车型:</td>
+                    <td><input class="otherInput" type="cache" disabled="disabled" value="16.5m"></td>
+                </tr>
+            </table>
+            <div style="border: 1px;border-style: double;height: 100%">
+                <span style="display: inline;margin-top: 5px;margin-bottom: 0;padding: 5px 5px 5px 5px;" class="pp"><b>订单列表:</b></span>
+
+                <table id="selectedTable" border="1px">
+                    <tr>
+                        <td><b>订单号</b></td>
+                        <td><b>到货地</b></td>
+                        <td><b>实际件数</b></td>
+                        <td><b>标准件数</b></td>
+                    </tr>
+                </table>
+                <script>
+                    var arr = sessionStorage.name;
+                    var array = JSON.parse(arr);
+                    if (array.length>2){
+                        document.getElementById("yesOrNoInput").value = "是";//根据数据库中的数量判断是否拼车
+                    }
+                    for (var i = 0;i<array.length;i++){
+                        tableCreateNode();
+                    }
+                    addLastNode();
+                </script>
+            </div>
+            <br/>
+            <br/>
+            <button class="bottomButton" style="width: 98%;background-color: skyblue;text-shadow: none" onclick="sendSuccess()">派车</button>
+        </div>-->
+        <br/><br/><br/><br/><br/>
+        <div><span>您的派车单已保存，如需提交或修改派车单进入已保存的派车单页面进行操作！</span></div>
+        <br/><br/><br/>
+        <button class="bottomButton" style="width: 40%;float: left;background-color: skyblue;text-shadow: none" onclick="goBackMain()">返回首页</button>
+        <button class="bottomButton" style="width: 45%;float: right;background-color: skyblue;text-shadow: none" onclick="goToHavedOrder()">已保存派车单</button>
+    </div>
+</div>
+</body>
+</html>

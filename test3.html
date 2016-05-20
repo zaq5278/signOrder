@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+    <title>Simple JavaScript Controller</title>
+    <script type="text/javascript">
+        function playPause() {
+            var myVideo = document.getElementsByTagName('video')[0];
+            if (myVideo.paused)
+                myVideo.play();
+            else
+                myVideo.pause();
+        }
+        function makeBig() {
+            var myVideo = document.getElementsByTagName('video')[0];
+            myVideo.height = myVideo.videoHeight * 2;
+        }
+        function makeNormal() {
+            var myVideo = document.getElementsByTagName('video')[0];
+            myVideo.height = myVideo.videoHeight;
+        }
+    </script>
+    <script>
+        // Put event listeners into place
+        window.addEventListener("DOMContentLoaded", function() {
+// Grab elements, create settings, etc.
+            var canvas = document.getElementById("canvas"),
+                context = canvas.getContext("2d"),
+                video = document.getElementById("video"),
+                videoObj = { "video": true },
+                errBack = function(error) {
+                    console.log("Video capture error: ", error.code);
+                };
+// Put video listeners into place
+            if(navigator.getUserMedia) { // Standard
+                navigator.getUserMedia(videoObj, function(stream) {
+                    video.src = stream;
+                    video.play();
+                }, errBack);
+            } else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
+                navigator.webkitGetUserMedia(videoObj, function(stream){
+                    video.src = window.webkitURL.createObjectURL(stream);
+                    video.play();
+                }, errBack);
+            }
+            else if(navigator.mozGetUserMedia) { // Firefox-prefixed
+                navigator.mozGetUserMedia(videoObj, function(stream){
+                    video.src = window.URL.createObjectURL(stream);
+                    video.play();
+                }, errBack);
+            }
+            else{
+                alert("aa");
+            }
+        }, false);
+    </script>
+</head>
+<body>
+<div class="video-player" align="center">
+    <video id="video" width="640" height="480" autoplay></video>
+    <button id="snap">Snap Photo</button>
+    <canvas id="canvas" width="640" height="480"></canvas>
+    <video src="myMovie.m4v" poster="zhongping.png" ></video>
+    <a href="javascript:playPause();">Play/Pause</a> |
+    <a href="javascript:makeBig();">2x Size</a> |
+    <a href="javascript:makeNormal();">1x Size</a>
+</div>
+</body>
+</html>

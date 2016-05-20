@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <meta name = "format-detection" content = "telephone=no">
+    <title></title>
+    <script src="jQuery/jquery-2.1.4.js"></script>
+    <script src="jQuery/jquery-ui.min.js"></script>
+    <script src="jQuery/jquery.mobile-1.4.5.min.js"></script>
+    <script src="cssAndJS/haveSubmitOrderJS.js"></script>
+    <link type="text/css" rel="stylesheet" href="jQuery/jquery-ui.min.css">
+    <link type="text/css" rel="stylesheet" href="jQuery/jquery.mobile-1.4.5.min.css">
+    <link type="text/css" rel="stylesheet" href="cssAndJS/haveSubmitOrderCss.css">
+    <script>
+        //拼接当前时间和前一天时间
+        var date = new Date();
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+        $(document).ready(function(){
+
+            if(month < 10){
+                month = "0"+month;
+            }
+            if(day < 10){
+                day = "0"+day;
+            }
+            document.getElementById("beforeDate").value = date.getFullYear()+"-"+month+"-"+ day;
+            document.getElementById("nowDate").value = date.getFullYear()+"-"+month+"-"+ day;
+            //时间格式必须是yyyy-mm-dd
+        });
+    </script>
+</head>
+<body>
+<div data-role="page">
+    <!--<div data-role="header"></div>-->
+    <div data-role="content">
+        <div>
+            <button id="goBackButton" onclick="goBackMain()">返回首页</button>
+            <button id="beforeButton" onclick="goToBefore()">上一页</button>
+        </div>
+        <div>
+            <label><input id="ordercodeInput" placeholder="输入派车单号进行查询"></label>
+        </div>
+        <div style="margin-top: -10px">
+            <table style="width: 100%">
+                <tr>
+                    <td style="width: 48%"><label style="width: 100%"><input id="beforeDate" type="date" class="timeInput"></label></td>
+                    <td>-</td>
+                    <td style="width: 48%"><label style="width: 100%"><input id="nowDate" type="date" class="timeInput"></label></td>
+                </tr>
+            </table>
+        </div>
+        <button style="margin-top: 0;text-shadow: none;padding-top: 8px;padding-bottom: 8px;background-color: skyblue" onclick="checkOrder()" class="show-page-loading-msg" data-msgtext="加载中..." data-textvisible="true" data-textonly="false" >查询</button>
+
+        <div id="myDiv" style="margin-top: 20px;width: 100%">
+        </div>
+
+    </div>
+    <!--<div>-->
+    <!--<div style="height: 35px"></div>-->
+    <!--<button id="retirement" onclick="goSendACarWithTable()">确认提交</button>-->
+    <!--</div>-->
+</div>
+</body>
+</html>

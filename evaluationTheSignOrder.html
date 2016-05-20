@@ -1,0 +1,51 @@
+<ion-view>
+    <ion-header-bar align-title="left" class="bar-calm">
+        <div class="buttons">
+            <button class="button icon ion-android-arrow-back" ng-click="goBackView()">返回</button>
+        </div>
+        <h1 class="title"></h1>
+        <div class="buttons">
+            <button class="button icon ion-ios-home" ng-click="goToMain()">首页</button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list">
+            <label class="item" style="font-weight: 400;width: 100%">
+                <span>车牌号:</span>
+                <span style="margin-left: 5px">豫A213123123</span>
+            </label>
+            <label class="item" style="font-weight: 400;width: 100%">
+                <span>订单号:</span>
+                <span style="margin-left: 5px">123123123123</span>
+            </label>
+            <label class="item" style="font-weight: 400;width: 100%">
+                <span>总件数:</span>
+                <span style="margin-left: 5px">3123</span>
+            </label>
+            <table class="item" style="font-weight: 400;width:100%;padding-top: 5px;padding-bottom: 1px">
+                <tr>
+                    <td><span>物流速度:</span></td>
+                    <td><rating ng-model="rating.rate" max="rating.max" style="color: goldenrod" ng-change="aaa()"></rating></td>
+                </tr>
+            </table>
+            <table class="item" style="font-weight: 400;width:100%;padding-top: 5px;padding-bottom: 1px">
+                <tr>
+                    <td><span>服务态度:</span></td>
+                    <td><rating ng-model="rating.rate" max="rating.max" style="color: goldenrod" ng-change="aaa()"></rating></td>
+                </tr>
+            </table>
+            <table class="item" style="font-weight: 400;width:100%;padding-top: 5px;padding-bottom: 1px">
+                <tr>
+                    <td><span>货品质量:</span></td>
+                    <td><rating ng-model="rating.rate" max="rating.max" style="color: goldenrod" ng-change="aaa()"></rating></td>
+                </tr>
+            </table>
+            <div style="padding-right: 5px"><textarea placeholder="备注:" id="textarea" rows="4" style="width:100%;margin: 2px 2px 2px 2px ;border: double 1px #e4e5e7"></textarea></div>
+        </div>
+
+        <div style="padding-right: 10px"><button class="button button-outline button-positive" style="width: 100%;margin-left: 5px">确认提交</button></div>
+    </ion-content>
+
+
+
+</ion-view>

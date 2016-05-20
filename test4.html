@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    function check()
+    {
+        var btn = document.getElementById("test_submit");
+        var frm = document.forms["test_form"];
+        var ifm = document.getElementById("test_iframe");
+        frm.action = "http://192.168.18.111:9999/synear/userServiceController.do?applogin&userName=admin&passWord=111111&phoneId=88&callback=jsonpcallback";
+        frm.target = "test_iframe";
+        frm.submit();
+        btn.disabled = "disabled";
+        if(ifm.attachEvent){ // for ie
+            ifm.attachEvent("onload", function(){
+                btn.disabled = "";
+                var str = ifm.contentWindow;
+                alert(str.document.body.innerHTML);
+                ifm.src = "about:blank";
+                ifm.detachEvent("onload", arguments.callee);
+            })
+        }else{
+
+            ifm.onload = function(){
+                btn.disabled = "";
+                var str = ifm.contentWindow;
+                alert(str.document.body.innerHTML);
+                ifm.src = "about:blank";
+                ifm.onload = null;
+            }
+
+        }
+        return false;
+
+    }
+
+</script>
+<form id="test_form" name="test_form">
+    <input type="hidden" value="xxx" name="content">
+    <input id="test_submit" type="submit" value="提交查询内容" name="test_submit">
+</form>
+<iframe id="test_iframe" style="display: none" height="1" width="1" name="test_iframe"></iframe>
+</body>
+</html>

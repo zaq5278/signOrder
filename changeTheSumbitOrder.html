@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <meta name = "format-detection" content = "telephone=no">
+    <title></title>
+    <script src="jQuery/jquery-2.1.4.js"></script>
+    <script src="jQuery/jquery-ui.min.js"></script>
+    <script src="jQuery/jquery.mobile-1.4.5.min.js"></script>
+    <script src="cssAndJS/changeTheSumbitOrderJs.js"></script>
+    <script language="javascript" type="text/javascript" src="My97DatePicker/jb51.net/My97DatePicker/WdatePicker.js"></script>
+    <link type="text/css" rel="stylesheet" href="jQuery/jquery-ui.min.css">
+    <link type="text/css" rel="stylesheet" href="jQuery/jquery.mobile-1.4.5.min.css">
+    <link type="text/css" rel="stylesheet" href="cssAndJS/changeTheSumbitOrderCss.css">
+    <script>
+        $(document).ready(function() {
+            $("#dateInput").datepicker();
+        });
+    </script>
+</head>
+<body>
+<div data-role="page">
+    <div data-role="content">
+        <button id="goBackButton" onclick="goBackMain()">返回首页</button>
+        <button id="beforeButton" onclick="goToBefore()">上一页</button>
+        <div>
+            <table>
+                <tr>
+                    <td><p class="pp">车牌号码:</p></td>
+                    <td><input id="areaSelect" class="userNameInput" type="text" style="font-size: 15px;width: 210px" onkeyup="value=value.replace(/[^\a-\z\A-\Z\u4E00-\u9FA5\d]/g,'')"></td><!--设置不能输入特殊字符-->
+                </tr>
+            </table>
+            <table class="table">
+                <tr>
+                    <td><p class="pp">司机姓名:</p></td>
+                    <!--<input type="text" class="domain" onkeyup="value=value.replace(/[^\a-\z\A-\Z\u4E00-\u9FA5\d]/g,'')">-->
+                    <td><input id="driverInput" class="userNameInput" type="text" style="font-size: 15px;width: 210px" onkeyup="value=value.replace(/[^\a-\z\A-\Z\u4E00-\u9FA5\d]/g,'')"></td>
+                </tr>
+            </table>
+            <table class="table">
+                <tr>
+                    <td><p class="pp">联系方式:</p></td>
+                    <td><input id="phoneInput" class="userNameInput" type="tel" style="font-size: 15px;width: 210px" onkeyup="if(/\D/.test(this.value)){alert('只能输入数字');this.value='';}" maxlength="11"></td>
+                </tr>
+            </table>
+            <table class="table">
+                <tr>
+                    <td><p class="pp">预约时间:</p></td>
+                    <!--<td><input class="userNameInput" type="text" style="font-size: 15px;" placeholder ="年 月 日 时 分 秒" onFocus="WdatePicker({startDate:'%y-%M-01 00:00:00',dateFmt:'yyyy-MM-dd HH:mm:ss',alwaysUseStartDate:true})" pattern= "[0-9]{0,11}" readonly="readonly"></td>-->
+                    <!--<td><div id="timeDiv" style="width: 150px;height: 30px;border: 1px double"></div></td>-->
+                    <td><input id="time" type="datetime-local"  style="width: 210px"></td>
+                    <!--<td><input id="dateInput" type="cache" placeholder="请选择日期"></td>-->
+                    <script>
+                        //                        document.getElementById("timeDiv").addEventListener("click",function(){
+                        //
+                        //                        });
+                        document.getElementById("time").innerHTML = "aaa";
+                    </script>
+                </tr>
+            </table>
+            <table class="table" style="margin-top: -15px">
+                <tr style="width: 110%">
+                    <td style="width:64px"><p class="pp">拼车:</p></td>
+                    <!--<td><input class="userNameInput" type="cache" id="yesOrNoInput" disabled="disabled" value="否"></td>-->
+                    <td id="yesOrNoTd"><label style="width:70px;margin-left: -35px"><select data-mini="true">
+                        <option id="noOption" value ="否">否</option>
+                        <option id="yesOption" value ="是">是</option>
+                    </select></label></td>
+                    <td style="width: 5px"></td>
+                    <td style="width:64px" class="pp">选择车型:</td>
+                    <td><label style="width:100px;margin-left: -5px"><select data-mini="true">
+                        <option value ="4.2米">4.2米</option>
+                        <option value ="5.0米">5.0米</option>
+                        <option value ="6.0米">6.0米</option>
+                        <option value ="6.5米">6.5米</option>
+                        <option value ="7.2米">7.2米</option>
+                        <option value ="7.6米">7.6米</option>
+                        <option value ="8.6米">8.6米</option>
+                        <option value ="9.6米">9.6米</option>
+                        <option value ="12.5米">12.5米</option>
+                        <option value ="13.7米">13.7米</option>
+                        <option value ="15.0米">15.0米</option>
+                        <option value ="16.5米">16.5米</option>
+                    </select></label></td>
+                </tr>
+            </table>
+            <div id="tableDiv" style="border: 1px;border-style: double;height: 100%;margin-top: 5px">
+                <span style="display: inline;margin-top: 5px;margin-bottom: 0;padding: 5px 5px 5px 5px;" class="pp"><b>订单列表:</b></span>
+                <!--<button style="display: inline" id="backSelectOrder" onclick="backSelectOrder()">重选订单</button>-->
+                <table id="selectedTable" border="1px">
+                    <tr>
+                        <td><b>订单号</b></td>
+                        <td><b>到货地</b></td>
+                        <td><b>实际件数</b></td>
+                        <td><b>标准件数</b></td>
+                    </tr>
+                </table>
+                <script>
+                    var arr = sessionStorage.name;
+                    var array = JSON.parse(arr);
+                    if (array.length>1){
+                        document.getElementById("yesOption").selected = "selected";//根据数据库中的数量判断是否拼车
+                    }
+                    for (var i = 0;i<array.length;i++){
+                        tableCreateNode();
+                    }
+                    addLastNode();
+                </script>
+            </div>
+            <br/>
+            <br/>
+            <button class="bottomButton" style="width: 50%;float: left;background-color: skyblue;text-shadow: none" onclick="saveTheOrder()">确定</button>
+            <!--<button class="bottomButton" style="width: 40%;float: right;background-color: skyblue;text-shadow: none" onclick="sendSuccess()">确认派车</button>-->
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1.0">-->
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <title>物流商登录—思念食品掌上CRM</title>
+
+    <script src="jQuery/jquery-2.1.4.js"></script>
+    <script>
+        $(document).ready(function(){
+            if (localStorage.sessionid && localStorage.functionArray){
+                window.location.href = "OrderAndSendCar.html";
+            }else {
+                window.location.href = "login.html";
+            }
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
